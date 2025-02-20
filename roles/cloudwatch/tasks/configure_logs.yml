@@ -1,0 +1,9 @@
+- name: Configure CloudWatch Agent
+  template:
+    src: cloudwatch-agent.json.j2
+    dest: /opt/aws/amazon-cloudwatch-agent/etc/config.json
+
+- name: Restart CloudWatch Agent
+  service:
+    name: amazon-cloudwatch-agent
+    state: restarted
