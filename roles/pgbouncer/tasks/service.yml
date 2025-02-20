@@ -1,0 +1,5 @@
+- name: Ensure PgBouncer is running
+  service:
+    name: pgbouncer
+    state: started
+    enabled: yes

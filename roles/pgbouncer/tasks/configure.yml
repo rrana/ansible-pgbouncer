@@ -1,0 +1,4 @@
+- name: Configure PgBouncer
+  template:
+    src: pgbouncer.ini.j2
+    dest: /etc/pgbouncer/pgbouncer.ini
