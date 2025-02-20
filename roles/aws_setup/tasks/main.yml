@@ -1,0 +1,4 @@
+- include_tasks: ec2.yml
+- include_tasks: autoscaling.yml
+- include_tasks: security_groups.yml
+- include_tasks: network_load_balancer.yml

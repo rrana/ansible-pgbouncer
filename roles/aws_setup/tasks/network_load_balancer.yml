@@ -1,0 +1,23 @@
+- name: Create Network Load Balancer
+  elb_network_lb:
+    name: PgBouncerNLB
+    subnets:
+      - subnet-abcdef1
+      - subnet-abcdef2
+    scheme: internal
+    state: present
+    listeners:
+      - protocol: TCP
+        port: 6432
+        target_group_arn: "{{ target_group_arn }}"
+
+- name: Create Target Group
+  elb_target_group:
+    name: PgBouncerTG
+    protocol: TCP
+    port: 6432
+    vpc_id: vpc-123456
+    health_check_protocol: TCP
+    health_check_port: 6432
+    target_type: instance
+    state: present

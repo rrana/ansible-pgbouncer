@@ -1,0 +1,12 @@
+- name: Create Security Group
+  ec2_group:
+    name: PgBouncerSG
+    description: Security group for PgBouncer
+    vpc_id: vpc-123456
+    region: "{{ region }}"
+    rules:
+      - proto: tcp
+        ports:
+          - 6432
+        cidr_ip: 10.0.0.0/16
+        rule_desc: Allow PgBouncer traffic
