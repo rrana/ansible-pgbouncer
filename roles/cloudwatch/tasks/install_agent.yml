@@ -1,0 +1,4 @@
+- name: Install CloudWatch Agent
+  apt:
+    name: amazon-cloudwatch-agent
+    state: latest

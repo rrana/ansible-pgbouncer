@@ -1,0 +1,4 @@
+- name: Install PgBouncer
+  apt:
+    name: pgbouncer
+    state: latest

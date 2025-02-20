@@ -1,0 +1,5 @@
+- name: Configure CloudWatch Logs
+  hosts: pgbouncer
+  become: yes
+  roles:
+    - cloudwatch
